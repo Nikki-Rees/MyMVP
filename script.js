@@ -41,7 +41,6 @@ function searchBallDl(x) {
 
 
 
-
 // save player function
 
 savePlayerBtn.on('click', function(event) {
@@ -57,3 +56,9 @@ function savePlayer(response) {
     // savedPlayerDiv.text(respon)
 
 }
+
+// playerStats(response.id) {
+    // let season = "?seasons[]=enterseason"
+    // let queryURL = `https://www.balldontlie.io/api/v1/season_averyages`${response.id}
+
+// }
