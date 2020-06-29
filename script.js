@@ -1,6 +1,6 @@
 //id search bar
 // const searchInput = document.querySelector('.input');
-const searchBtn = document.querySelector('.is-info');
+const searchBtn = document.querySelector("#search-btn");
 // declare variable with search bar value
 
 
@@ -13,7 +13,7 @@ searchBtn.addEventListener('click', function(event) {
 
     searchBallDl(playerName);
 
-})
+}) 
 
 
 
