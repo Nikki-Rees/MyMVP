@@ -1,4 +1,5 @@
 const savedMVPs = $('#savedMVPs');
+const savePlayerBtn = $('#savePlayerBtn');
 
 
 //id search bar
@@ -16,7 +17,7 @@ searchBtn.addEventListener('click', function(event) {
 
     searchBallDl(playerName);
 
-}) 
+})
 
 
 
@@ -27,11 +28,33 @@ function searchBallDl(x) {
         method: "GET"
     }).then(function(response) {
         console.log(response);
-        createRow(response);
+        // createRow(response);
+        savePlayer(response);
     });
 };
 
 
-function savePlayer() {
+
+//player card Function
+
+
+
+
+
+
+
+// save player function
+
+savePlayerBtn.on('click', function(event) {
+    event.preventDefault();
+
+})
+
+function savePlayer(response) {
+    let savedPlayerDiv = $('<button>');
+    let savedPlayer = "";
+    savedPlayer = response.data[0].first_name + " " + response.data[0].last_name;
+    console.log(savedPlayer);
+    // savedPlayerDiv.text(respon)
 
 }

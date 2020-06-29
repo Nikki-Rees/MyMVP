@@ -19,12 +19,6 @@
 <body>
 
     <header>
-
-    </header>
-
-
-
-    <div class="container">
         <section class="hero is-dark">
             <div class="hero-body">
                 <div class="container">
@@ -47,7 +41,10 @@
                 </div>
             </div>
         </section>
-    </div>
+    </header>
+
+
+
     <div id="savedMVPs">test</div>
     <!-- // Row 1 - Create container for banner containing logo, search bar & nav (if needed) !> -->
 
@@ -58,18 +55,48 @@
 
 
     <!-- // Add a Player Stats card < pulling from balldontlie API  -->
-    <div class="container">
-        <div class="notification">
+    <main class="content">
+
+        <div class="columns">
+
+            <div class="column is-half" id="column-1">
+                <div class='statsInfo' id="currentPlayer">Player Name</div>
+                <div class='statsInfo' id="currentTeam">Team Name</div>
+                <div class='statsInfo' id="currentImage">Images</div>
+            </div>
+
+            <div class="column" id="column-2">
+                <div class="columns">
+                    <div class="column is-half">
+                        <div class='statsInfo' id="stats">Stat Card</div>
+                    </div>
+                    <div class="column">
+                        <div class='statsInfo' id="teamStats">Team Stats</div>
+                    </div>
+
+                </div>
+                <div class='statsInfo' id="ytBox">Youtube</div>
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- <div class="notification">
             <div class="card">
                 <div class="card-content">
 
                     <div class="content">
 
                     </div>
-                    <button>Save Player</button>
+                    <button id="savePlayerBtn">Save Player</button>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <!-- // Add a Team origin summary card < pulling from Wikipedia API  -->
 
