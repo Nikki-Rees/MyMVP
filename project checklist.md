@@ -13,3 +13,14 @@
 
 
 // [] main section function triggers 2 other ajax functions
+
+
+
+
+task breakdown
+[] local storage for previously searched players
+    [] create previous players as buttons
+    [] append to #savedMVPs
+
+[] image or gifs ajax function
+    [] create html elements
