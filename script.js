@@ -42,7 +42,6 @@ function searchBallDl(x) {
 
 
 
-
 // save player function
 
 savePlayerBtn.on('click', function(event) {
