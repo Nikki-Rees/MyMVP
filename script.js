@@ -1,3 +1,6 @@
+const savedMVPs = $('#savedMVPs');
+
+
 //id search bar
 // const searchInput = document.querySelector('.input');
 const searchBtn = document.querySelector('.is-info');
@@ -27,3 +30,8 @@ function searchBallDl(x) {
         createRow(response);
     });
 };
+
+
+function savePlayer() {
+
+}
