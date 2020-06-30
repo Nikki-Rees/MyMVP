@@ -60,3 +60,9 @@
     margin: 5px;
     text-align: center;
 }
+
+.savedPlayer {
+    border: 2px solid black;
+    padding: 5px;
+    margin: 10px;
+}
