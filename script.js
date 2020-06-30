@@ -81,9 +81,9 @@ function playerStats(x) {
         $("#ast").text("Avg ast: " + response.data[0].ast);
         $("#stl").text("Avg stl: " + response.data[0].stl);
         $("#blk").text("Avg blk: " + response.data[0].blk);
-        $("#fg_pct").text("FG %: " + response.data[0].fg_pct + "%");
-        $("#fg3_pct").text("3P %: " + response.data[0].fg3_pct + "%");
-        $("#ft_pct").text("FT %: " + response.data[0].ft_pct + "%");
+        $("#fg_pct").text("FG %: " + response.data[0].fg_pct);
+        $("#fg3_pct").text("3P %: " + response.data[0].fg3_pct);
+        $("#ft_pct").text("FT %: " + response.data[0].ft_pct);
         $("#min").text("Avg min: " + response.data[0].min);
         $("#season").text("Season: " + response.data[0].season);
     })
