@@ -11,7 +11,7 @@ const searchBtn = document.querySelector("#search-btn");
 
 //declare ball don't lie api variable
 
-searchBtn.addEventListener('click', function(event) {
+searchBtn.addEventListener('click', function (event) {
     let playerName = $('.input').val();
     event.preventDefault();
     console.log(playerName)
@@ -27,10 +27,15 @@ function searchBallDl(x) {
     $.ajax({
         url: queryURL,
         method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
         console.log(response);
         // createRow(response);
         savePlayer(response);
+        $("#currentPlayer").text(response.data[0].first_name + " " + response.data[0].last_name);
+        $("#height").text("Height: " + response.data[0].height_feet + "ft " + response.data[0].height_inches + ("in"));
+        $("#weight").text("Weight: " + response.data[0].weight_pounds);
+        $("#position").text("Position: " + response.data[0].position);
+
     });
 };
 
@@ -44,7 +49,7 @@ function searchBallDl(x) {
 
 // save player function
 
-savePlayerBtn.on('click', function(event) {
+savePlayerBtn.on('click', function (event) {
     event.preventDefault();
 
 })
