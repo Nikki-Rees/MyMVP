@@ -36,6 +36,8 @@ function searchBallDl(x) {
         $("#weight").text("Weight: " + response.data[0].weight_pounds);
         $("#position").text("Position: " + response.data[0].position);
 
+        playerStats(response.data[0].id);
+
     });
 };
 
@@ -63,41 +65,32 @@ function savePlayer(response) {
 
 }
 
-// playerStats(response.id) {
-    //eg link "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237"
+function playerStats(x) {
     // let season = "?seasons[]=enterseason"
-    // let queryURL = `https://www.balldontlie.io/api/v1/season_averyages${response.id}`
-    // console.log(reponse.id)
-    // console.log(queryURL)
-// {
-//   "data": [
-//     {
-//       "games_played":37,
-//       "player_id":237,
-//       "season":2018,
-//       "min":"34:46",
-//       "fgm":9.92,
-//       "fga":19.22,
-//       "fg3m":2.05,
-//       "fg3a":5.73,
-//       "ftm":5.08,
-//       "fta":7.54,
-//       "oreb":0.95,
-//       "dreb":7.59,
-//       "reb":8.54,
-//       "ast":7.38,
-//       "stl":1.32,
-//       "blk":0.65,
-//       "turnover":3.49,
-//       "pf":1.59,
-//       "pts":26.97,
-//       "fg_pct":0.516,
-//       "fg3_pct":0.358,
-//       "ft_pct":0.674
-//     }
-//   ]
-// }
-// }
+    let queryURL = "https://www.balldontlie.io/api/v1/season_averages?" + "player_ids[]=" + x;
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+
+    }).then(function (response) {
+
+
+        $("#pts").text("Avg pts: " + response.data[0].pts);
+        $("#reb").text("Avg reb: " + response.data[0].reb);
+        $("#ast").text("Avg ast: " + response.data[0].ast);
+        $("#stl").text("Avg stl: " + response.data[0].stl);
+        $("#blk").text("Avg blk: " + response.data[0].blk);
+        $("#fg_pct").text("FG %: " + response.data[0].fg_pct + "%");
+        $("#fg3_pct").text("3P %: " + response.data[0].fg3_pct + "%");
+        $("#ft_pct").text("FT %: " + response.data[0].ft_pct + "%");
+        $("#min").text("Avg min: " + response.data[0].min);
+        $("#season").text("Season: " + response.data[0].season);
+    })
+
+}
+
+
 
 
 // const queryURL =
