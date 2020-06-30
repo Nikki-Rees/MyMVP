@@ -23,6 +23,22 @@ searchBtn.on('click', function (event) {
 
 })
 
+function renderPlayerBtns() {
+
+
+    for (let i = 0; i < savedPlayerArray.length; i++) {
+
+        let newDiv = $("<div>")
+        newDiv.text(savedPlayerArray[i]);
+        $("#savedMVPs").append(newDiv);
+    }
+
+}
+
+function resetState() {
+    savedMVPs.empty();
+}
+
 
 savePlayerBtn.on('click', function (event) {
     event.preventDefault();
@@ -31,10 +47,15 @@ savePlayerBtn.on('click', function (event) {
         let savedPlayerName = $("#name").text();
         savedPlayerArray.push(savedPlayerName);
         localStorage.setItem("savedMVPList", JSON.stringify(savedPlayerArray));
+        resetState();
+        renderPlayerBtns();
     } else {
         return;
     }
+
 })
+
+
 
 
 function searchBallDl(x) {
