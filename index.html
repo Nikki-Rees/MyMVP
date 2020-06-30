@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
     <!-- Links to Google fonts -->
     <link rel="stylesheet" href="styles.css">
-
-
-
 </head>
 
 <body>
@@ -42,7 +39,6 @@
     </header>
 
 
-
     <div id="savedMVPs">
         <span class="savedPlayer">Saved Player 1</span>
         <span class="savedPlayer">Saved Player 2</span>
@@ -52,9 +48,7 @@
 
     <!-- // Row 2 Create container for the MVP favourites list (previously searched, saved players) -->
 
-
     <!-- // Row 3 - Create container for Player name and team name as a title < Include a Save MVP button  -->
-
 
     <!-- // Add a Player Stats card < pulling from balldontlie API  -->
     <main class="content">
@@ -63,7 +57,9 @@
 
             <div class="column is-half" id="column-1">
                 <div class='statsInfo' id="stats">Stat Card
-                    <div class='statsInfo' id="currentPlayer">Player Name</div>
+                    <div class='statsInfo' id="currentPlayer"> <span id="name">Player Name</span> <button
+                            id="savePlayerBtn">Save Player</button></div>
+
 
                     <div class='statsInfo' id="currentTeam">Team Name</div>
 
@@ -91,13 +87,8 @@
             <div class="column" id="column-2">
                 <!-- <div class="columns">
                     <div class="column is-half">
-
-                      
-
                     <div class="column">
-
                     </div>
-
                 </div> -->
                 <div class='statsInfo' id="ytBox">Youtube</div>
                 <div class='statsInfo' id="currentImage">Images</div>
@@ -109,16 +100,12 @@
 
     </main>
 
-
-
     <!-- <div class="notification">
             <div class="card">
                 <div class="card-content">
-
                     <div class="content">
-
                     </div>
-                    <button id="savePlayerBtn">Save Player</button>
+
                 </div>
             </div>
         </div> -->
@@ -131,7 +118,6 @@
     <div id="player"></div>
 
     <!-- // Link to the JS script file -->
-
     <!-- Link to the JS script file -->
 
     <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
