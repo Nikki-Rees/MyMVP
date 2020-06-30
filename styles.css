@@ -8,7 +8,9 @@
     padding: 24px;
 }
 
-
+p {
+    padding: 0px
+}
 /* .container {
     border: 2px solid black;
     padding: 24px;
@@ -65,4 +67,14 @@
     border: 2px solid black;
     padding: 5px;
     margin: 10px;
+}
+
+#ytBox {
+height: 50%;
+
+}
+
+#currentImage {
+
+    height: 50%;
 }

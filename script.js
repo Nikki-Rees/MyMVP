@@ -2,6 +2,9 @@
 const savedMVPs = $('#savedMVPs');
 const savePlayerBtn = $('#savePlayerBtn');
 
+let savedPlayerArray = JSON.parse(localStorage.getItem("savedMVPList")) || [];
+
+
 
 //id search bar
 // const searchInput = document.querySelector('.input');
@@ -33,19 +36,13 @@ function searchBallDl(x) {
         savePlayer(response);
         $("#currentPlayer").text(response.data[0].first_name + " " + response.data[0].last_name);
         $("#height").text("Height: " + response.data[0].height_feet + "ft " + response.data[0].height_inches + ("in"));
-        $("#weight").text("Weight: " + response.data[0].weight_pounds);
+        $("#weight").text("Weight: " + response.data[0].weight_pounds + "lbs");
         $("#position").text("Position: " + response.data[0].position);
 
         playerStats(response.data[0].id);
 
     });
 };
-
-
-
-//player card Function
-
-
 
 
 
@@ -75,7 +72,7 @@ function playerStats(x) {
 
     }).then(function (response) {
 
-
+        console.log(response);
         $("#pts").text("Avg pts: " + response.data[0].pts);
         $("#reb").text("Avg reb: " + response.data[0].reb);
         $("#ast").text("Avg ast: " + response.data[0].ast);
