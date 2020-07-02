@@ -120,10 +120,7 @@ function searchGiphy(playerName) {
         method: "GET",
     }).then(function(response) {
         console.log(response);
-        console.log("test gif")
-
-
-
+        
         for (let index = 0; index < response.data.length; index++) {
 
             let newGif = $("<img>")

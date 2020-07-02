@@ -3,7 +3,11 @@ const apiKey = "&key=AIzaSyBnkoYU_uw9KSVJAdUlTLaZltRCIieA_6s";
 function searchYouTube() {
     let playerName = $(".input").val().replace(" ", "%20")
     const queryURL =
-        "https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&q=" + playerName + "&type=video&videoDefinition=high&videoEmbeddable=true" + apiKey;
+      "https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&q=" +
+      playerName +
+      "career%20highlights" +
+      "&type=video&videoDefinition=high&videoEmbeddable=true" +
+      apiKey;
     $.ajax({
         url: queryURL,
         method: "GET",
