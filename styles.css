@@ -19,6 +19,11 @@ p {
 }
 
 
+#logo {
+width:40%;
+padding:0px;
+margin: 1px;
+}
 
 /* .container {
     border: 2px solid black;
