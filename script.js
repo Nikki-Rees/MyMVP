@@ -8,7 +8,12 @@ let savedPlayerArray = JSON.parse(localStorage.getItem("savedMVPList")) || [];
 const searchBtn = $("#search-btn");
 // declare variable with search bar value
 
-//declare ball don't lie api variable
+$("#player-search-input").keypress(function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    searchBtn.click();
+  }
+});
 
 searchBtn.on("click", function(event) {
     let playerName = $(".input").val();
