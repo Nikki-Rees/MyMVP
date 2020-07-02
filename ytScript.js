@@ -1,3 +1,21 @@
+// const apiKey = "&key=AIzaSyBnkoYU_uw9KSVJAdUlTLaZltRCIieA_6s";
+
+// function searchYouTube() {
+//   let playerName = $(".input").val().replace(" ", "%20")
+//   const queryURL =
+//     "https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&q=" + playerName + "&type=video&videoDefinition=high&videoEmbeddable=true" + apiKey;
+//   $.ajax({
+//     url: queryURL,
+//     method: "GET",
+//   }).then(function (response) {
+//     console.log(response);
+//     let highlightVid = response.items[0].id.videoId
+//     // console.log(highlightVid)
+//     // console.log(queryURL)
+//     onYouTubeIframeAPIReady(highlightVid);
+//   });
+// }
+
 // // YouTube video script
 // // loads the IFrame Player API code asynchronously.
 // let tag = document.createElement('script');
@@ -10,16 +28,16 @@
 // //    after the API code downloads.
 // let player;
 
-// function onYouTubeIframeAPIReady() {
-//     player = new YT.Player('player', {
-//         height: '390',
-//         width: '640',
-//         videoId: 'M7lc1UVf-VE',
-//         events: {
-//             'onReady': onPlayerReady,
-//             'onStateChange': onPlayerStateChange
-//         }
-//     });
+// function onYouTubeIframeAPIReady(highlightVid) {
+//   player = new YT.Player("player", {
+//     height: "390",
+//     width: "640",
+//     videoId: highlightVid,
+//     events: {
+//       onReady: onPlayerReady,
+//       onStateChange: onPlayerStateChange,
+//     },
+//   });
 // }
 
 // //The API will call this function when the video player is ready.
@@ -34,7 +52,7 @@
 
 // function onPlayerStateChange(event) {
 //     if (event.data == YT.PlayerState.PLAYING && !done) {
-//         setTimeout(stopVideo, 6000);
+//         // setTimeout(stopVideo, 6000);
 //         done = true;
 //     }
 // }
