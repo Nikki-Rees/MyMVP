@@ -3,7 +3,8 @@
 }
 
 #savedMVPs {
-    border: 2px solid black;
+    border: 2px solid;
+    background-color: #363636;
     margin: 24px;
     padding: 24px;
 }
@@ -63,10 +64,33 @@ p {
     text-align: center;
 }
 
+#search-btn {
+    background-color: #c8102e;
+}
+
+
+#savePlayerBtn {
+    border: 1px solid;
+    border-color: #ffffff;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #c8102e;
+    padding: 20px;
+    margin: 10px;
+   
+}
+
 .savedPlayer {
-    border: 2px solid black;
+    border: 1px solid;
+    border-color: #ffffff;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #c8102e;
     padding: 5px;
     margin: 10px;
+    display: inline-flex;
+    font-weight: bold;
 }
 
 #ytBox {
@@ -77,4 +101,11 @@ height: 50%;
 #currentImage {
 
     height: 50%;
+}
+
+#name {
+    font-size: 36px;
+    font-weight: bold;
+    color: darkblue;
+    padding: 10px;
 }
