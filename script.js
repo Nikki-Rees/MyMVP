@@ -1,4 +1,4 @@
-// const APIkey = "&api_key=J6pBLGX38uKv9oFHUNmKpHbDAvpQ1r1K";
+const giphyAPIkey = "&api_key=J6pBLGX38uKv9oFHUNmKpHbDAvpQ1r1K";
 const savedMVPs = $('#savedMVPs');
 const savePlayerBtn = $('#savePlayerBtn');
 
@@ -121,14 +121,28 @@ function playerStats(x) {
 }
 
 
+// function searchGiphy() {
+//     let playerName = $('.input').val();
+//     const queryURL = "http://api.giphy.com/v1/gifs/search?q=" + playerName + giphyAPIkey + "&limit=5";
+//     $.ajax({
+//         url: queryURL,
+//         method: "GET",
+//     }).then(function (response) {
+//         console.log("Giphy response: " + response);
 
+//         $("#giphyContainer").append(response);
+//     });
+// }
 
-// const queryURL =
-//   "http://api.giphy.com/v1/gifs/search?q=" + playerName + APIkey + "&limit=5";
-// $.ajax({
-//   url: queryURL,
-//   method: "GET",
-// }).then(function (response) {
-//   console.log(response);
-//   $("#currentImage").append(response);
-// });
+// function searchYouTube() {
+//     let playerName = $('.input').val();
+//     const queryURL = "https://www.googleapis.com/youtube/v3/search?q" + playerName;
+//     $.ajax({
+//         url: queryURL,
+//         method: "GET",
+//     }).then(function (response) {
+//         console.log("Giphy response: " + response);
+
+//         $("#giphyContainer").append(response);
+//     });
+// }
