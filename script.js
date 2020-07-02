@@ -123,12 +123,12 @@ function playerStats(x) {
 
 
 
-// const queryURL =
-//   "http://api.giphy.com/v1/gifs/search?q=" + playerName + APIkey + "&limit=5";
-// $.ajax({
-//   url: queryURL,
-//   method: "GET",
-// }).then(function (response) {
-//   console.log(response);
-//   $("#currentImage").append(response);
-// });
+const queryURL =
+  "http://api.giphy.com/v1/gifs/search?q=" + playerName + APIkey + "&limit=5";
+$.ajax({
+  url: queryURL,
+  method: "GET",
+}).then(function (response) {
+  console.log(response);
+  $("#currentImage").append(response);
+});
