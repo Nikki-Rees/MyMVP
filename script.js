@@ -17,7 +17,7 @@ const searchBtn = $("#search-btn");
 searchBtn.on('click', function (event) {
     let playerName = $('.input').val();
     event.preventDefault();
-    console.log(playerName)
+    console.log(playerName);
 
     searchBallDl(playerName);
 
@@ -28,7 +28,7 @@ function renderPlayerBtns() {
 
     for (let i = 0; i < savedPlayerArray.length; i++) {
 
-        let newDiv = $("<div>")
+        let newDiv = $("<div>").addClass("savedPlayer");
         newDiv.text(savedPlayerArray[i]);
         $("#savedMVPs").append(newDiv);
     }
