@@ -2,16 +2,24 @@
     box-sizing: border-box;
 }
 
+.hero-body {
+    background-color:  #25274D;
+}
+
 #savedMVPs {
     border: 2px solid;
-    background-color: #363636;
+    background-color: #25274D;
     margin: 24px;
     padding: 24px;
+    width: 100%;
 }
 
 p {
     padding: 0px
 }
+
+
+
 /* .container {
     border: 2px solid black;
     padding: 24px;
@@ -37,7 +45,7 @@ p {
 } */
 
 .content {
-    border: 2px solid black;
+    border: 2px solid ;
     padding: 24px;
     margin: 24px;
 }
@@ -58,24 +66,25 @@ p {
 } */
 
 .statsInfo {
-    border: 2px solid black;
+    border: 2px solid #8590AA;
     padding: 10px;
     margin: 5px;
     text-align: center;
 }
 
 #search-btn {
-    background-color: #c8102e;
+    background-color: #3B8BEB;
+    border-color: #c4DBF6; 
 }
 
 
 #savePlayerBtn {
     border: 1px solid;
-    border-color: #ffffff;
+    border-color: #c4DBF6;
     color: #ffffff;
     font-weight: bold;
     border-radius: 5px;
-    background-color: #c8102e;
+    background-color: #B23850;
     padding: 20px;
     margin: 10px;
    
@@ -83,11 +92,11 @@ p {
 
 .savedPlayer {
     border: 1px solid;
-    border-color: #ffffff;
+    border-color: #c4DBF6;
     color: #ffffff;
     border-radius: 5px;
-    background-color: #c8102e;
-    padding: 5px;
+    background-color: #B23850;
+    padding: 10px;
     margin: 10px;
     display: inline-flex;
     font-weight: bold;
@@ -106,6 +115,6 @@ height: 50%;
 #name {
     font-size: 36px;
     font-weight: bold;
-    color: darkblue;
+    color: #25274D;
     padding: 10px;
 }
