@@ -16,14 +16,14 @@ if (savedPlayerArray.length > 0) {
 const searchBtn = $("#search-btn");
 // declare variable with search bar value
 
-$("#player-search-input").keypress(function (event) {
+$("#player-search-input").keypress(function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         searchBtn.click();
     }
 });
 
-searchBtn.on("click", function (event) {
+searchBtn.on("click", function(event) {
     let playerName = $(".input").val();
     event.preventDefault();
 
@@ -50,12 +50,12 @@ function resetState() {
 
 }
 
-savePlayerBtn.on("click", function (event) {
+savePlayerBtn.on("click", function(event) {
     event.preventDefault();
 
     if (savedPlayerArray.length < 5) {
         let savedPlayerName = $("#name").text();
-        savedPlayerArray.push(savedPlayerName);
+        savedPlayerArray.unshift(savedPlayerName);
         localStorage.setItem("savedMVPList", JSON.stringify(savedPlayerArray));
         resetState();
         renderPlayerBtns();
@@ -69,7 +69,7 @@ function searchBallDl(x) {
     $.ajax({
         url: queryURL,
         method: "GET",
-    }).then(function (response) {
+    }).then(function(response) {
         console.log(response);
         // createRow(response);
 
@@ -102,7 +102,7 @@ function searchBallDl(x) {
 
 // save player function
 
-savePlayerBtn.on("click", function (event) {
+savePlayerBtn.on("click", function(event) {
     event.preventDefault();
 });
 
@@ -122,7 +122,7 @@ function playerStats(x) {
     $.ajax({
         url: queryURL,
         method: "GET",
-    }).then(function (response) {
+    }).then(function(response) {
         // console.log(response);
         $("#pts").text("Avg pts: " + response.data[0].pts);
         $("#reb").text("Avg reb: " + response.data[0].reb);
@@ -147,7 +147,7 @@ function searchGiphy(playerName) {
     $.ajax({
         url: queryURL2,
         method: "GET",
-    }).then(function (response) {
+    }).then(function(response) {
         console.log(response);
 
         for (let index = 0; index < response.data.length; index++) {
@@ -161,4 +161,3 @@ function searchGiphy(playerName) {
     });
 
 }
-
