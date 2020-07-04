@@ -1,8 +1,9 @@
 const apiKey = "&key=AIzaSyB3Uzltvvc3WAcR0gtBID0DcbF2f2HI_Po";
 
 function searchYouTube() {
+    $("#player").empty();
     let playerName = $(".input").val().replace(" ", "%20")
-    const queryURL =
+    let queryURL =
         "https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&q=" +
         playerName +
         "career%20highlights" +
@@ -12,8 +13,9 @@ function searchYouTube() {
         url: queryURL,
         method: "GET",
     }).then(function (response) {
+
         console.log(response);
-        let highlightVid = response.items[0].id.videoId
+        let highlightVid = response.items[0].id.videoId;
         console.log(response)
         console.log(highlightVid)
         // console.log(queryURL)
@@ -34,6 +36,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 let player;
 
 function loadVideo(highlightVid) {
+
     player = new YT.Player("player", {
         height: "390",
         width: "640",
@@ -57,7 +60,7 @@ let done = false;
 
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING && !done) {
-        // setTimeout(stopVideo, 6000);
+        setTimeout(stopVideo, 10000);
         done = true;
     }
 }

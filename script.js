@@ -22,7 +22,7 @@ searchBtn.on("click", function (event) {
     resetState();
     renderPlayerBtns();
     searchBallDl(playerName);
-    searchYouTube();
+    searchYouTube(playerName);
     searchGiphy(playerName);
 
 });
@@ -38,7 +38,7 @@ function renderPlayerBtns() {
 function resetState() {
     savedMVPs.empty();
     $(".giphyContainer").empty();
-
+    $("#player").empty();
 }
 
 savePlayerBtn.on("click", function (event) {
