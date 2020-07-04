@@ -141,7 +141,8 @@ overflow: auto;
     overflow: auto;
 }
 
-#name {
+#name,
+#team {
     font-size: 36px;
     font-weight: bold;
     color: white;

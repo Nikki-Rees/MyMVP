@@ -11,7 +11,7 @@ if (savedPlayerArray.length > 0) {
     searchYouTube(lastMVP);
     searchGiphy(lastMVP);
 
-};
+}
 
 const searchBtn = $("#search-btn");
 // declare variable with search bar value
@@ -70,12 +70,19 @@ function searchBallDl(x) {
         url: queryURL,
         method: "GET",
     }).then(function (response) {
-        // console.log(response);
+        console.log(response);
         // createRow(response);
+
         savePlayer(response);
         $("#name").text(
             response.data[0].first_name + " " + response.data[0].last_name
         );
+
+        $("#team").text(
+            response.data[0].team.full_name
+        );
+
+
         $("#height").text(
             "Height: " +
             response.data[0].height_feet +
