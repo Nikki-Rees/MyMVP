@@ -131,12 +131,14 @@ width: 360px
 overflow: auto;
 border: 2px solid #8590AA;
 margin: auto;
+vertical-align: middle;
 }
 
 #currentImage {
     border: 2px solid #8590AA;
     overflow: auto;
     margin:auto;
+    vertical-align: middle;
 }
 
 #name,
@@ -150,4 +152,5 @@ margin: auto;
 img, 
 iframe {
 margin: auto;
+vertical-align: middle;
 }
