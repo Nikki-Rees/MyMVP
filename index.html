@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY MVP</title>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
-    <!-- Links to Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link href="~bulma-carousel/dist/css/bulma-carousel.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,20 +19,23 @@
         <section class="hero is-dark">
             <div class="hero-body">
                 <div class="container">
-                    <img src="./assets/logo2.png" id="logo">
+                    <img src="./assets/logo6.png" id="logo">
 
                     <!-- <h2 class="subtitle">
                         Search Your Favourite Players Stats!
                     </h2> -->
-                    <div class="field has-addons">
-                        <p class="control">
-                            <input class="input" type="text" id="player-search-input" placeholder="Search for your player...">
-                        </p>
-                        <p class="control">
-                            <a class="button is-info" id="search-btn">
-                                <i class="fas fa-search"></i>
-                            </a>
-                        </p>
+                    <div class="search">
+                        <div class="field has-addons">
+                            <p class="control">
+                                <input class="input" type="text" id="player-search-input"
+                                    placeholder="Search for your player...">
+                            </p>
+                            <p class="control">
+                                <a class="button is-info" id="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,18 +60,23 @@
 
             <div class="column is-half" id="column-1">
                 <div class='statsInfo' id="stats">
-                    <h2>Player details</h2>
+                    <h2 class="titles">PLAYER DETAILS</h2>
                     <div class='statsInfo' id="currentPlayer"> <span id="name">Player Name</span> <button
-                            id="savePlayerBtn">Save Player</button></div>
+                            id="savePlayerBtn"> <i class="far fa-save"></i></button>
+                        <p id="height">
+
+                        <p id="weight"></p>
+                        <p id="position"></p>
+
+                    </div>
+                    <div class='statsInfo' id="currentTeam">
+                        <h2>TEAM NAME</h2>
+                    </div>
 
 
-                    <div class='statsInfo' id="currentTeam">Team Name</div>
 
-                    <p id="height"></p>
-                    <p id="weight"></p>
-                    <p id="position"></p>
-
-                    <div class='statsInfo' id="teamStats">Team Stats
+                    <div class='statsInfo' id="teamStats">
+                        <h3>SEASON STATS</h3>
                         <p id="season"></p>
                         <p id="pts"></p>
                         <p id="reb"></p>
@@ -88,10 +97,12 @@
             <!-- // Add a container for Youtube video < pulling from YouTube API // Add a footer - hold copyright  -->
 
             <div class="column" id="column-2">
-                <div class='statsInfo' id="ytBox">Youtube
+                <div class='statsInfo' id="ytBox">
+                    <h3>CAREER HIGHLIGHTS</h3>
                     <div id="player"></div>
                 </div>
-                <div class='statsInfo' id="currentImage">Images
+                <div class='statsInfo' id="currentImage">
+                    <h3>PLAYER GIFS</h3>
                     <div class="giphyContainer"></div>
                 </div>
             </div>

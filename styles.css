@@ -1,10 +1,12 @@
 * {
     box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
 }
 
 .hero-body {
-    background-color:  #25274D;
-    padding: 10px;
+    background-color:  #1a1e41;
+    padding: 12px;
 }
 
 #savedMVPs {
@@ -15,28 +17,13 @@
     width: 100%;
 }
 
-h2,
-h3,
-p {
-    padding: 0px;
-    color: white;
 
+.titles{
+    color:white;
+    font-size: 32px
 }
 
-
-#logo {
-width:40%;
-padding:0px;
-margin: 1px;
-}
-
-/* .container {
-    border: 2px solid black;
-    padding: 24px;
-    margin: 24px;
-}
-
-.notification {
+/* .notification {
     border: 2px solid black;
     padding: 24px;
     margin: 24px;
@@ -55,11 +42,36 @@ margin: 1px;
 } */
 
 .content {
-    border: 2px solid ;
     padding: 24px;
+    margin: 24px; 
+} 
+
+.container {
+  
+    padding: 10px;
     margin: 24px;
+    
 }
 
+#logo {
+    width:40%;
+    padding:5px;
+    margin: 5px 0px 5px 0px
+    
+    }
+
+    .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+        color: #b60c2e;
+        font-weight: 600;
+        line-height: 1.125;
+    }
+
+.search {
+    padding-top: 10px;
+    padding-left: 30px;
+    width:40%;
+}
+    
 
 /* .columns {
     overflow: auto;
@@ -77,14 +89,19 @@ margin: 1px;
 
 .statsInfo {
     border: 2px solid #8590AA;
-    background-color: #25274D;
+    background-color: #1a1e41;
     padding: 10px;
     margin: 5px;
-    text-align: center;
+    text-align: left;
+    color: #ffffff;
+}
+
+#player-search-input {
+width: 360px
 }
 
 #search-btn {
-    background-color: #3B8BEB;
+    background-color: #b60c2e;
     border-color: #c4DBF6; 
 }
 
@@ -94,9 +111,10 @@ margin: 1px;
     border-color: #c4DBF6;
     color: #ffffff;
     font-weight: bold;
+    font-size: 32px;
     border-radius: 5px;
-    background-color: #B23850;
-    padding: 20px;
+    background-color: #b60c2e;
+    padding: 5px;
     margin: 10px;
    
 }
@@ -106,7 +124,7 @@ margin: 1px;
     border-color: #c4DBF6;
     color: #ffffff;
     border-radius: 5px;
-    background-color: #B23850;
+    background-color: #b60c2e;
     padding: 10px;
     margin: 10px;
     display: inline-flex;
@@ -114,13 +132,13 @@ margin: 1px;
 }
 
 #ytBox {
-height: 50%;
+overflow: auto;
 
 }
 
 #currentImage {
 
-    height: 50%;
+    overflow: auto;
 }
 
 #name {
