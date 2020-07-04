@@ -1,7 +1,7 @@
 const apiKey = "&key=AIzaSyB3Uzltvvc3WAcR0gtBID0DcbF2f2HI_Po";
 
 function searchYouTube() {
-    $("#player").empty();
+
     let playerName = $(".input").val().replace(" ", "%20")
     let queryURL =
         "https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&q=" +
@@ -25,6 +25,7 @@ function searchYouTube() {
 
 // YouTube video script
 // loads the IFrame Player API code asynchronously.
+
 let tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";

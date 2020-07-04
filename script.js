@@ -3,8 +3,16 @@ const savePlayerBtn = $("#savePlayerBtn");
 
 let savedPlayerArray = JSON.parse(localStorage.getItem("savedMVPList")) || [];
 
-//id search bar
-// const searchInput = document.querySelector('.input');
+renderPlayerBtns();
+if (savedPlayerArray.length > 0) {
+
+    let lastMVP = savedPlayerArray[savedPlayerArray.length - 1];
+    searchBallDl(lastMVP);
+    searchYouTube(lastMVP);
+    searchGiphy(lastMVP);
+
+};
+
 const searchBtn = $("#search-btn");
 // declare variable with search bar value
 
@@ -38,7 +46,8 @@ function renderPlayerBtns() {
 function resetState() {
     savedMVPs.empty();
     $(".giphyContainer").empty();
-    $("#player").empty();
+    $('#player').empty();
+
 }
 
 savePlayerBtn.on("click", function (event) {
@@ -140,4 +149,6 @@ function searchGiphy(playerName) {
         }
 
     });
+
 }
+
