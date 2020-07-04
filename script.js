@@ -71,7 +71,7 @@ savePlayerBtn.on("click", function(event) {
 });
 
 
-$(".savedPlayer").on('click', function(event) {
+$(document).on('click', ".savedPlayer", function(event) {
     event.preventDefault();
     let searchText = $(this).text();
     resetState();
