@@ -60,7 +60,7 @@ savePlayerBtn.on("click", function(event) {
         resetState();
         renderPlayerBtns();
     } else {
-        let savedPlayerName = $("#name").text();
+
         savedPlayerArray.splice(-1, 1);
         savedPlayerArray.unshift(savedPlayerName);
         localStorage.setItem("savedMVPList", JSON.stringify(savedPlayerArray));
@@ -69,6 +69,19 @@ savePlayerBtn.on("click", function(event) {
 
     }
 });
+
+
+$(".savedPlayer").on('click', function(event) {
+    event.preventDefault();
+    let searchText = $(this).text();
+    resetState();
+    renderPlayerBtns();
+    searchBallDl(searchText);
+    searchYouTube(searchText);
+    searchGiphy(searchText);
+})
+
+
 
 function searchBallDl(x) {
     let queryURL = "https://www.balldontlie.io/api/v1/players?search=" + x;
@@ -79,7 +92,6 @@ function searchBallDl(x) {
         console.log(response);
         // createRow(response);
 
-        savePlayer(response);
         $("#name").text(
             response.data[0].first_name + " " + response.data[0].last_name
         );
@@ -106,19 +118,7 @@ function searchBallDl(x) {
     });
 }
 
-// save player function
 
-savePlayerBtn.on("click", function(event) {
-    event.preventDefault();
-});
-
-function savePlayer(response) {
-    let savedPlayerDiv = $("<button>");
-    let savedPlayer = "";
-    savedPlayer = response.data[0].first_name + " " + response.data[0].last_name;
-
-    // savedPlayerDiv.text(response)
-}
 
 function playerStats(x) {
     // let season = "?seasons[]=enterseason"
