@@ -45,7 +45,7 @@ function loadVideo(highlightVid) {
         events: {
             onReady: onPlayerReady,
             onStateChange: onPlayerStateChange,
-        },
+        }
     });
 }
 

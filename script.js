@@ -46,7 +46,7 @@ function renderPlayerBtns() {
 function resetState() {
     savedMVPs.empty();
     $(".giphyContainer").empty();
-    $('#player').empty();
+    // $('#player').empty();
 
 }
 
@@ -81,7 +81,10 @@ function searchBallDl(x) {
         $("#team").text(
             response.data[0].team.full_name
         );
-
+        $("#nickname").text("AKA: " + response.data[0].team.name);
+        $("#city").text("City: " + response.data[0].team.city);
+        $("#conference").text("Conference: " + response.data[0].team.conference);
+        $("#division").text("Division: " + response.data[0].team.division);
 
         $("#height").text(
             "Height: " +
