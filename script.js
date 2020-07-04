@@ -8,7 +8,7 @@ if (savedPlayerArray.length > 0) {
 
     let lastMVP = savedPlayerArray[savedPlayerArray.length - 1];
     searchBallDl(lastMVP);
-    searchYouTube(lastMVP);
+    // searchYouTube(lastMVP);
     searchGiphy(lastMVP);
 
 }
@@ -30,7 +30,7 @@ searchBtn.on("click", function(event) {
     resetState();
     renderPlayerBtns();
     searchBallDl(playerName);
-    searchYouTube(playerName);
+    // searchYouTube(playerName);
     searchGiphy(playerName);
 
 });
@@ -60,7 +60,7 @@ savePlayerBtn.on("click", function(event) {
         resetState();
         renderPlayerBtns();
     } else {
-
+        let savedPlayerName = $("#name").text();
         savedPlayerArray.splice(-1, 1);
         savedPlayerArray.unshift(savedPlayerName);
         localStorage.setItem("savedMVPList", JSON.stringify(savedPlayerArray));
@@ -77,7 +77,7 @@ $(".savedPlayer").on('click', function(event) {
     resetState();
     renderPlayerBtns();
     searchBallDl(searchText);
-    searchYouTube(searchText);
+    // searchYouTube(searchText);
     searchGiphy(searchText);
 })
 
