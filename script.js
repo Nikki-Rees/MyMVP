@@ -60,7 +60,13 @@ savePlayerBtn.on("click", function(event) {
         resetState();
         renderPlayerBtns();
     } else {
-        return;
+        let savedPlayerName = $("#name").text();
+        savedPlayerArray.splice(-1, 1);
+        savedPlayerArray.unshift(savedPlayerName);
+        localStorage.setItem("savedMVPList", JSON.stringify(savedPlayerArray));
+        resetState();
+        renderPlayerBtns();
+
     }
 });
 
