@@ -17,6 +17,9 @@
     width: 100%;
 }
 
+div.savedPlayer {
+    cursor:pointer;
+}
 
 /* .notification {
     border: 2px solid black;
