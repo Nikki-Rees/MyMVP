@@ -9,19 +9,22 @@ const searchBtn = $("#search-btn");
 // declare variable with search bar value
 
 $("#player-search-input").keypress(function (event) {
-  if (event.keyCode === 13) {
-    event.preventDefault();
-    searchBtn.click();
-  }
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        searchBtn.click();
+    }
 });
 
-searchBtn.on("click", function(event) {
+searchBtn.on("click", function (event) {
     let playerName = $(".input").val();
     event.preventDefault();
 
+    resetState();
+    renderPlayerBtns();
     searchBallDl(playerName);
     searchYouTube();
     searchGiphy(playerName);
+
 });
 
 function renderPlayerBtns() {
@@ -34,9 +37,11 @@ function renderPlayerBtns() {
 
 function resetState() {
     savedMVPs.empty();
+    $(".giphyContainer").empty();
+
 }
 
-savePlayerBtn.on("click", function(event) {
+savePlayerBtn.on("click", function (event) {
     event.preventDefault();
 
     if (savedPlayerArray.length < 5) {
@@ -55,7 +60,7 @@ function searchBallDl(x) {
     $.ajax({
         url: queryURL,
         method: "GET",
-    }).then(function(response) {
+    }).then(function (response) {
         // console.log(response);
         // createRow(response);
         savePlayer(response);
@@ -78,7 +83,7 @@ function searchBallDl(x) {
 
 // save player function
 
-savePlayerBtn.on("click", function(event) {
+savePlayerBtn.on("click", function (event) {
     event.preventDefault();
 });
 
@@ -98,7 +103,7 @@ function playerStats(x) {
     $.ajax({
         url: queryURL,
         method: "GET",
-    }).then(function(response) {
+    }).then(function (response) {
         // console.log(response);
         $("#pts").text("Avg pts: " + response.data[0].pts);
         $("#reb").text("Avg reb: " + response.data[0].reb);
@@ -123,9 +128,9 @@ function searchGiphy(playerName) {
     $.ajax({
         url: queryURL2,
         method: "GET",
-    }).then(function(response) {
+    }).then(function (response) {
         console.log(response);
-        
+
         for (let index = 0; index < response.data.length; index++) {
 
             let newGif = $("<img>")
