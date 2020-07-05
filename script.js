@@ -57,6 +57,7 @@ savePlayerBtn.on("click", function(event) {
         localStorage.setItem("savedMVPList", JSON.stringify(savedPlayerArray));
         resetState();
         renderPlayerBtns();
+        searchGiphy(savedPlayerName);
     } else {
         let savedPlayerName = $("#name").text();
         savedPlayerArray.splice(-1, 1);
@@ -64,6 +65,7 @@ savePlayerBtn.on("click", function(event) {
         localStorage.setItem("savedMVPList", JSON.stringify(savedPlayerArray));
         resetState();
         renderPlayerBtns();
+        searchGiphy(savedPlayerName);
     }
 });
 
