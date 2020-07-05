@@ -15,14 +15,14 @@ if (savedPlayerArray.length > 0) {
 const searchBtn = $("#search-btn");
 // declare variable with search bar value
 
-$("#player-search-input").keypress(function(event) {
+$("#player-search-input").keypress(function (event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         searchBtn.click();
     }
 });
 
-searchBtn.on("click", function(event) {
+searchBtn.on("click", function (event) {
     let playerName = $(".input").val();
     event.preventDefault();
 
@@ -47,7 +47,7 @@ function resetState() {
     $(".giphyContainer").empty();
 }
 
-savePlayerBtn.on("click", function(event) {
+savePlayerBtn.on("click", function (event) {
     event.preventDefault();
 
     if (savedPlayerArray.length < 5) {
@@ -68,7 +68,7 @@ savePlayerBtn.on("click", function(event) {
     }
 });
 
-$(document).on('click', ".savedPlayer", function(event) {
+$(document).on('click', ".savedPlayer", function (event) {
     event.preventDefault();
     let searchText = $(this).text().replace(" ", "%20");
     resetState();
@@ -78,7 +78,7 @@ $(document).on('click', ".savedPlayer", function(event) {
     searchGiphy(searchText);
 })
 
-$(document).on("click", "#yt-refresh-btn", function() {
+$(document).on("click", "#yt-refresh-btn", function () {
     window.location.reload();
 })
 
@@ -87,7 +87,7 @@ function searchBallDl(x) {
     $.ajax({
         url: queryURL,
         method: "GET",
-    }).then(function(response) {
+    }).then(function (response) {
         console.log(response);
 
         $("#name").text(
@@ -126,7 +126,7 @@ function playerStats(x) {
     $.ajax({
         url: queryURL,
         method: "GET",
-    }).then(function(response) {
+    }).then(function (response) {
         // console.log(response);
         $("#pts").text("PTS: " + response.data[0].pts);
         $("#reb").text("REB: " + response.data[0].reb);
@@ -151,7 +151,7 @@ function searchGiphy(playerName) {
     $.ajax({
         url: queryURL2,
         method: "GET",
-    }).then(function(response) {
+    }).then(function (response) {
         console.log(response);
 
         for (let index = 0; index < response.data.length; index++) {
@@ -161,17 +161,18 @@ function searchGiphy(playerName) {
             // console.log(response.data[index].images.downsized_medium.url);
             // $(".giphyContainer").append(newGif);
 
-              let gifDiv = $("<div>");
-              let gifImg = $("<img>");
+            let gifDiv = $("<div>");
+            let gifImg = $("<img>");
 
-              gifDiv.attr("id", "slide-" + (index + 1));
-              gifImg.attr(
+            gifDiv.attr("id", "slide-" + (index + 1));
+            gifImg.attr(
                 "src",
                 response.data[index].images.downsized_medium.url
-              );
+            );
+            gifImg.addClass("gifImg");
 
-              gifDiv.append(gifImg);
-              $(".slides").append(gifDiv);
+            gifDiv.append(gifImg);
+            $(".slides").append(gifDiv);
         }
     });
 }
