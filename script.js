@@ -6,7 +6,7 @@ let savedPlayerArray = JSON.parse(localStorage.getItem("savedMVPList")) || [];
 renderPlayerBtns();
 if (savedPlayerArray.length > 0) {
 
-    let lastMVP = savedPlayerArray[savedPlayerArray.length - 1];
+    let lastMVP = (savedPlayerArray[savedPlayerArray.length - 1]).replace(" ", "%20");
     searchBallDl(lastMVP);
     searchYouTube(lastMVP);
     searchGiphy(lastMVP);
@@ -76,6 +76,7 @@ $(document).on('click', ".savedPlayer", function(event) {
     renderPlayerBtns();
     searchBallDl(searchText);
     searchYouTube(searchText);
+    console.log(searchText)
     searchGiphy(searchText);
 })
 
