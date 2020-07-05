@@ -74,6 +74,7 @@ $(document).on('click', ".savedPlayer", function(event) {
     renderPlayerBtns();
     searchBallDl(searchText);
     searchYouTube(searchText);
+    console.log(searchText)
     searchGiphy(searchText);
 })
 
