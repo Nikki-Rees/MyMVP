@@ -45,7 +45,7 @@ function renderPlayerBtns() {
 function resetState() {
     savedMVPs.empty();
     $(".giphyContainer").empty();
-    
+
 }
 
 savePlayerBtn.on("click", function(event) {
@@ -57,6 +57,7 @@ savePlayerBtn.on("click", function(event) {
         localStorage.setItem("savedMVPList", JSON.stringify(savedPlayerArray));
         resetState();
         renderPlayerBtns();
+        searchGiphy(savedPlayerName);
     } else {
         let savedPlayerName = $("#name").text();
         savedPlayerArray.splice(-1, 1);
@@ -64,6 +65,7 @@ savePlayerBtn.on("click", function(event) {
         localStorage.setItem("savedMVPList", JSON.stringify(savedPlayerArray));
         resetState();
         renderPlayerBtns();
+        searchGiphy(savedPlayerName);
     }
 });
 
@@ -78,7 +80,7 @@ $(document).on('click', ".savedPlayer", function(event) {
     searchGiphy(searchText);
 })
 
-$(document).on("click", "#yt-refresh-btn", function(){
+$(document).on("click", "#yt-refresh-btn", function() {
     window.location.reload();
 })
 
@@ -89,7 +91,7 @@ function searchBallDl(x) {
         method: "GET",
     }).then(function(response) {
         console.log(response);
-        
+
         $("#name").text(
             response.data[0].first_name + " " + response.data[0].last_name
         );
@@ -119,7 +121,7 @@ function searchBallDl(x) {
 
 
 function playerStats(x) {
-   
+
     let queryURL =
         "https://www.balldontlie.io/api/v1/season_averages?" + "player_ids[]=" + x;
 
@@ -133,9 +135,9 @@ function playerStats(x) {
         $("#ast").text("AST: " + response.data[0].ast);
         $("#stl").text("STL: " + response.data[0].stl);
         $("#blk").text("BLK: " + response.data[0].blk);
-        $("#fg_pct").text("FG%: " + (response.data[0].fg_pct) * 100);
+        $("#fg_pct").text("FG%: " + ((response.data[0].fg_pct) * 100).toFixed(2));
         $("#fg3_pct").text("3P%: " + ((response.data[0].fg3_pct) * 100).toFixed(2));
-        $("#ft_pct").text("FT%: " + (response.data[0].ft_pct) * 100);
+        $("#ft_pct").text("FT%: " + ((response.data[0].ft_pct) * 100).toFixed(2));
         $("#min").text("MIN: " + response.data[0].min);
         $("#season").text("Season: " + response.data[0].season);
     });

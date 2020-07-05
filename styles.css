@@ -73,7 +73,7 @@ div.savedPlayer {
 }
 
 
-/* .columns {
+ /* .columns {
     overflow: auto;
 }
 
@@ -81,11 +81,12 @@ div.savedPlayer {
     float: left;
     border: 2px dotted black;
     width: 60%;
-}
-
-#column-2 {
-    width: 40%;
 } */
+
+/* #column-2 {
+    width: 40%;
+  
+}  */
 
 .statsInfo {
     border: 2px solid #8590AA;
@@ -159,4 +160,5 @@ img,
 iframe {
     margin: auto;
     vertical-align: middle;
+    width: 100%;
 }
