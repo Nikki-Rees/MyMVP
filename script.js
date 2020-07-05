@@ -8,9 +8,8 @@ if (savedPlayerArray.length > 0) {
 
     let lastMVP = savedPlayerArray[savedPlayerArray.length - 1];
     searchBallDl(lastMVP);
-    // searchYouTube(lastMVP);
+    searchYouTube(lastMVP);
     searchGiphy(lastMVP);
-
 }
 
 const searchBtn = $("#search-btn");
@@ -30,7 +29,7 @@ searchBtn.on("click", function(event) {
     resetState();
     renderPlayerBtns();
     searchBallDl(playerName);
-    // searchYouTube(playerName);
+    searchYouTube(playerName);
     searchGiphy(playerName);
 
 });
@@ -46,8 +45,7 @@ function renderPlayerBtns() {
 function resetState() {
     savedMVPs.empty();
     $(".giphyContainer").empty();
-    // $('#player').empty();
-
+    
 }
 
 savePlayerBtn.on("click", function(event) {
@@ -66,22 +64,22 @@ savePlayerBtn.on("click", function(event) {
         localStorage.setItem("savedMVPList", JSON.stringify(savedPlayerArray));
         resetState();
         renderPlayerBtns();
-
     }
 });
 
-
 $(document).on('click', ".savedPlayer", function(event) {
     event.preventDefault();
-    let searchText = $(this).text();
+    let searchText = $(this).text().replace(" ", "%20");
     resetState();
     renderPlayerBtns();
     searchBallDl(searchText);
-    // searchYouTube(searchText);
+    searchYouTube(searchText);
     searchGiphy(searchText);
 })
 
-
+$(document).on("click", "#yt-refresh-btn", function(){
+    window.location.reload();
+})
 
 function searchBallDl(x) {
     let queryURL = "https://www.balldontlie.io/api/v1/players?search=" + x;
@@ -90,8 +88,7 @@ function searchBallDl(x) {
         method: "GET",
     }).then(function(response) {
         console.log(response);
-        // createRow(response);
-
+        
         $("#name").text(
             response.data[0].first_name + " " + response.data[0].last_name
         );
@@ -121,7 +118,7 @@ function searchBallDl(x) {
 
 
 function playerStats(x) {
-    // let season = "?seasons[]=enterseason"
+   
     let queryURL =
         "https://www.balldontlie.io/api/v1/season_averages?" + "player_ids[]=" + x;
 
@@ -163,7 +160,5 @@ function searchGiphy(playerName) {
             console.log(response.data[index].images.downsized_medium.url);
             $(".giphyContainer").append(newGif);
         }
-
     });
-
 }
