@@ -14,7 +14,7 @@ function searchYouTube() {
         url: queryURLyt,
         method: "GET",
     }).then(function (response) {
-
+        
         let highlightVid = response.items[0].id.videoId;
         console.log(response)
         console.log(highlightVid)

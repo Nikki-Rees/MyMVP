@@ -45,7 +45,6 @@ function renderPlayerBtns() {
 function resetState() {
     savedMVPs.empty();
     $(".giphyContainer").empty();
-
 }
 
 savePlayerBtn.on("click", function(event) {
@@ -76,7 +75,6 @@ $(document).on('click', ".savedPlayer", function(event) {
     renderPlayerBtns();
     searchBallDl(searchText);
     searchYouTube(searchText);
-    console.log(searchText)
     searchGiphy(searchText);
 })
 
@@ -158,10 +156,22 @@ function searchGiphy(playerName) {
 
         for (let index = 0; index < response.data.length; index++) {
 
-            let newGif = $("<img>")
-            newGif.attr("src", response.data[index].images.downsized_medium.url)
-            console.log(response.data[index].images.downsized_medium.url);
-            $(".giphyContainer").append(newGif);
+            // let newGif = $("<img>")
+            // newGif.attr("src", response.data[index].images.downsized_medium.url)
+            // console.log(response.data[index].images.downsized_medium.url);
+            // $(".giphyContainer").append(newGif);
+
+              let gifDiv = $("<div>");
+              let gifImg = $("<img>");
+
+              gifDiv.attr("id", "slide-" + (index + 1));
+              gifImg.attr(
+                "src",
+                response.data[index].images.downsized_medium.url
+              );
+
+              gifDiv.append(gifImg);
+              $(".slides").append(gifDiv);
         }
     });
 }
