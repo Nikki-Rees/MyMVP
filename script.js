@@ -1,6 +1,7 @@
 const savedMVPs = $("#savedMVPs");
 const savePlayerBtn = $("#savePlayerBtn");
-
+const apiKey = "&key=AIzaSyDbZPfUtjliyuqK5aR6PP_ng8nNZpL6Njo"; //don't commit this key. Delete before commit.
+const searchBtn = $("#search-btn");
 let savedPlayerArray = JSON.parse(localStorage.getItem("savedMVPList")) || [];
 
 renderPlayerBtns();
@@ -11,9 +12,6 @@ if (savedPlayerArray.length > 0) {
     searchYouTube(lastMVP);
     searchGiphy(lastMVP);
 }
-
-const searchBtn = $("#search-btn");
-// declare variable with search bar value
 
 $("#player-search-input").keypress(function (event) {
     if (event.keyCode === 13) {
@@ -133,6 +131,29 @@ function playerStats(x) {
         $("#min").text("MIN: " + response.data[0].min);
         $("#season").text("Season: " + response.data[0].season);
     });
+}
+
+function searchYouTube(playerName) {
+  //   let playerName = $(".input").val().replace(" ", "%20");
+  let queryURLyt =
+    "https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&q=" +
+    playerName +
+    "%20career%20highlights" +
+    "&type=video&videoDefinition=high&videoEmbeddable=true&maxResults=50" +
+    apiKey;
+  $.ajax({
+    url: queryURLyt,
+    method: "GET",
+  }).then(function (response) {
+    let itemNumber = Math.floor(Math.random() * 50) + 1;
+    let highlightVid = response.items[itemNumber].id.videoId; 
+
+    console.log(response);
+    console.log(highlightVid);
+
+    let ytLink = "https://www.youtube.com/embed/" + highlightVid;
+    $("#yt-link").attr("src", ytLink);
+  });
 }
 
 function searchGiphy(playerName) {
