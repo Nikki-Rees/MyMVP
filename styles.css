@@ -163,3 +163,7 @@ iframe {
     vertical-align: middle;
     width: 100%;
 }
+
+h2 {
+    text-align: left;
+}
