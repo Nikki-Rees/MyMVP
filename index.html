@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY MVP</title>
-    <link rel="icon" href="Assets/favicon.ico" />
+    <link rel="icon" href="./assets/favicon.ico" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -13,17 +13,11 @@
 </head>
 
 <body>
-
-    <!-- // Row 1 - Create container for banner containing logo, search bar & nav (if needed) !> -->
     <header>
         <section class="hero is-dark">
             <div class="hero-body">
                 <div class="container">
                     <img src="./assets/logo6.png" id="logo">
-
-                    <!-- <h2 class="subtitle">
-                        Search Your Favourite Players Stats!
-                    </h2> -->
                     <div class="search">
                         <div class="field has-addons">
                             <p class="control">
@@ -43,17 +37,8 @@
     </header>
 
 
-    <div id="savedMVPs">
-        <h2>MY MVPs:</h2>
+    <div id="savedMVPs"></div>
 
-
-    </div>
-
-    <!-- // Row 2 Create container for the MVP favourites list (previously searched, saved players) -->
-
-    <!-- // Row 3 - Create container for Player name and team name as a title < Include a Save MVP button  -->
-
-    <!-- // Add a Player Stats card < pulling from balldontlie API  -->
     <main class="content">
 
         <div class="columns">
@@ -64,11 +49,9 @@
                     <div class='statsInfo' id="currentPlayer">
                         <h2>PLAYER DETAILS</h2>
                         <span id="name"></span> <button id="savePlayerBtn"> <i class="far fa-save"></i></button>
-                        <p id="height">
-
-                        <p id="weight"></p>
-                        <p id="position"></p>
-
+                            <p id="height">
+                            <p id="weight"></p>
+                            <p id="position"></p>
                     </div>
                     <div class='statsInfo' id="currentTeam">
                         <h2>TEAM DETAILS</h2>
@@ -78,8 +61,6 @@
                         <p id="conference"></p>
                         <p id="division"></p>
                     </div>
-
-
 
                     <div class='statsInfo' id="teamStats">
                         <h2>PLAYER SEASON STATS</h2>
@@ -100,20 +81,18 @@
             </div>
 
 
-            <!-- // Add a container for Youtube video < pulling from YouTube API // Add a footer - hold copyright  -->
-
-            <div class="column is-centered" id="column-2">
+            <div class="column" id="column-2">
                 <div class='statsInfo' id="ytBox">
                     <h2>CAREER HIGHLIGHTS</h2>
-                    <!-- <span id="yt-refresh-btn">Refresh Video</span> -->
+
                     <iframe id="yt-link" width="560" height="315" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
                 <div class='statsInfo' id="currentImage">
                     <h2>PLAYER GIFS</h2>
-                    <!-- <div class="giphyContainer"></div> -->
-                    <div class="slider is-centered">
+
+                    <div class="slider">
 
                         <a href="#slide-1">1</a>
                         <a href="#slide-2">2</a>
@@ -131,9 +110,6 @@
 
 
     </main>
-
-    <!-- // Link to the JS script file -->
-    <!-- Link to the JS script file -->
 
     <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
