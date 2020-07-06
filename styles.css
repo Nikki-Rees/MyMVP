@@ -146,6 +146,8 @@ div.savedPlayer {
     overflow: auto;
     margin: auto;
     vertical-align: middle;
+    text-align: center;
+    
 }
 
 #name,
