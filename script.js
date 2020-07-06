@@ -1,7 +1,7 @@
 //global variables
 const savedMVPs = $("#savedMVPs");
 const savePlayerBtn = $("#savePlayerBtn");
-const apiKey = "&key=AIzaSyABGM37j16t_jMNsCaH432AXu9oC0nlcY4"; //don't commit this key. Delete before commit.
+const apiKey = "&key=AIzaSyD3jCFk1Zqv262WtQLuTZwDQKd1L74GMeA"; //don't commit this key. Delete before commit.
 const searchBtn = $("#search-btn");
 const clearLocalStore = $("#clear-localstorage-btn");
 let savedPlayerArray = JSON.parse(localStorage.getItem("savedMVPList")) || [];
