@@ -78,10 +78,6 @@ $(document).on('click', ".savedPlayer", function (event) {
     searchGiphy(searchText);
 })
 
-$(document).on("click", "#yt-refresh-btn", function () {
-    window.location.reload();
-})
-
 function searchBallDl(x) {
     let queryURL = "https://www.balldontlie.io/api/v1/players?search=" + x;
     $.ajax({
@@ -116,8 +112,6 @@ function searchBallDl(x) {
     });
 }
 
-
-
 function playerStats(x) {
 
     let queryURL =
@@ -127,7 +121,7 @@ function playerStats(x) {
         url: queryURL,
         method: "GET",
     }).then(function (response) {
-        // console.log(response);
+        
         $("#pts").text("PTS: " + response.data[0].pts);
         $("#reb").text("REB: " + response.data[0].reb);
         $("#ast").text("AST: " + response.data[0].ast);
@@ -155,11 +149,6 @@ function searchGiphy(playerName) {
         console.log(response);
 
         for (let index = 0; index < response.data.length; index++) {
-
-            // let newGif = $("<img>")
-            // newGif.attr("src", response.data[index].images.downsized_medium.url)
-            // console.log(response.data[index].images.downsized_medium.url);
-            // $(".giphyContainer").append(newGif);
 
             let gifDiv = $("<div>");
             let gifImg = $("<img>");
