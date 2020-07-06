@@ -44,7 +44,7 @@ function renderPlayerBtns() {
 
 function resetState() {
     savedMVPs.empty();
-    $(".giphyContainer").empty();
+    $(".slides").empty();
 }
 
 savePlayerBtn.on("click", function (event) {
