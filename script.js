@@ -1,7 +1,7 @@
 //global variables
 const savedMVPs = $("#savedMVPs");
 const savePlayerBtn = $("#savePlayerBtn");
-const apiKey = "&key="; //don't commit this key. Delete before commit.
+const apiKey = ""; //don't commit this key. Delete before commit.
 const searchBtn = $("#search-btn");
 const clearLocalStore = $("#clear-localstorage-btn");
 let savedPlayerArray = JSON.parse(localStorage.getItem("savedMVPList")) || [];
@@ -17,7 +17,7 @@ if (savedPlayerArray.length > 0) {
 }
 
 //enables searchBtn function to run when enter key is pressed with the player search input field
-$("#player-search-input").keypress(function (event) {
+$("#player-search-input").keypress(function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         searchBtn.click();
@@ -25,7 +25,7 @@ $("#player-search-input").keypress(function (event) {
 });
 
 //main function of the app that triggers all functions
-searchBtn.on("click", function (event) {
+searchBtn.on("click", function(event) {
     let playerName = $(".input").val();
     event.preventDefault();
 
@@ -53,7 +53,7 @@ function resetState() {
 }
 
 //adds to current searched player to local storage. When limit of 5 is reached first saved player is replaced.
-savePlayerBtn.on("click", function (event) {
+savePlayerBtn.on("click", function(event) {
     event.preventDefault();
 
     if (savedPlayerArray.length < 5) {
@@ -61,7 +61,7 @@ savePlayerBtn.on("click", function (event) {
         savedPlayerArray.unshift(savedPlayerName);
         localStorage.setItem("savedMVPList", JSON.stringify(savedPlayerArray));
         resetState();
-        renderPlayerBtns(); 
+        renderPlayerBtns();
         searchGiphy(savedPlayerName);
     } else {
         let savedPlayerName = $("#name").text();
@@ -74,13 +74,13 @@ savePlayerBtn.on("click", function (event) {
     }
 });
 
-clearLocalStore.on("click", function(){
+clearLocalStore.on("click", function() {
     localStorage.clear();
     location.reload();
 })
 
 //triggers app functions when saved player is pressed
-$(document).on('click', ".savedPlayer", function (event) {
+$(document).on('click', ".savedPlayer", function(event) {
     event.preventDefault();
     let searchText = $(this).text().replace(" ", "%20");
     resetState();
@@ -96,7 +96,7 @@ function searchBallDl(x) {
     $.ajax({
         url: queryURL,
         method: "GET",
-    }).then(function (response) {
+    }).then(function(response) {
         console.log(response);
 
         $("#name").text(
@@ -134,8 +134,8 @@ function playerStats(x) {
     $.ajax({
         url: queryURL,
         method: "GET",
-    }).then(function (response) {
-        
+    }).then(function(response) {
+
         $("#pts").text("PTS: " + response.data[0].pts);
         $("#reb").text("REB: " + response.data[0].reb);
         $("#ast").text("AST: " + response.data[0].ast);
@@ -151,25 +151,25 @@ function playerStats(x) {
 
 //Youtube api retrieves a clip of player highlights and randomly chooses 1 of 25
 function searchYouTube(playerName) {
-  let queryURLyt =
-    "https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&q=" +
-    playerName +
-    "%20career%20highlights" +
-    "&type=video&videoDefinition=high&videoEmbeddable=true&maxResults=50" +
-    apiKey;
-  $.ajax({
-    url: queryURLyt,
-    method: "GET",
-  }).then(function (response) {
-    let itemNumber = Math.floor(Math.random() * 25) + 1;
-    let highlightVid = response.items[itemNumber].id.videoId; 
+    let queryURLyt =
+        "https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&q=" +
+        playerName +
+        "%20career%20highlights" +
+        "&type=video&videoDefinition=high&videoEmbeddable=true&maxResults=50" +
+        apiKey;
+    $.ajax({
+        url: queryURLyt,
+        method: "GET",
+    }).then(function(response) {
+        let itemNumber = Math.floor(Math.random() * 25) + 1;
+        let highlightVid = response.items[itemNumber].id.videoId;
 
-    console.log(response);
-    console.log(highlightVid);
+        console.log(response);
+        console.log(highlightVid);
 
-    let ytLink = "https://www.youtube.com/embed/" + highlightVid;
-    $("#yt-link").attr("src", ytLink);
-  });
+        let ytLink = "https://www.youtube.com/embed/" + highlightVid;
+        $("#yt-link").attr("src", ytLink);
+    });
 }
 
 //Giphy api retrieves 5 gifs related to searched player
@@ -183,7 +183,7 @@ function searchGiphy(playerName) {
     $.ajax({
         url: queryURL2,
         method: "GET",
-    }).then(function (response) {
+    }).then(function(response) {
         console.log(response);
 
         for (let index = 0; index < response.data.length; index++) {

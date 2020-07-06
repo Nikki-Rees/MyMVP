@@ -18,8 +18,9 @@
 }
 
 div.savedPlayer {
-    cursor:pointer;
+    cursor: pointer;
 }
+
 
 /* .notification {
     border: 2px solid black;
@@ -73,7 +74,7 @@ div.savedPlayer {
 }
 
 
- /* .columns {
+/* .columns {
     overflow: auto;
 }
 
@@ -82,6 +83,7 @@ div.savedPlayer {
     border: 2px dotted black;
     width: 60%;
 } */
+
 
 /* #column-2 {
     width: 40%;
@@ -147,7 +149,6 @@ div.savedPlayer {
     margin: auto;
     vertical-align: middle;
     text-align: center;
-    
 }
 
 #name,
@@ -166,4 +167,9 @@ iframe {
 
 h2 {
     text-align: left;
+}
+
+#clear-localstorage-btn {
+    background-color: #b60c2e;
+    border-color: #c4DBF6;
 }
