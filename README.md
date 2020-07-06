@@ -25,12 +25,12 @@ Link to deployed application: https://nikki-rees.github.io/ProjectOne/
 
 1. Upon initial launch of the application, user will see the following screen:
 
-*SCREENSHOT*
+![](/Screenshots/1.png)
 
 
 2. Users can type the name of an NBA player and search them when they click on the search button:
 
-*SCREENSHOT*
+![](/Screenshots/2.png)
 
 3. Browser will load the following:
     - Players Name, height, Weight and Position played
@@ -40,27 +40,29 @@ Link to deployed application: https://nikki-rees.github.io/ProjectOne/
     - GIFs featuring the searched player
 
 
-*SCREENSHOT*
+![](/Screenshots/3.png)
 
 4. Users will have the option to save their favourite player searches by pressing the save button beside the player's name
 
 
-*SCREENSHOT* 
+![](/Screenshots/4.png)
 
 4a. the last saved player will appear as a button above
 
-*SCREENSHOT*
+![](/Screenshots/5.png)
 
 
 4b. if user clicks a previously saved player button, this will trigger a new search and render the relevant player information
 
-*SCREENSHOT*
+![](/Screenshots/6.png)
+![](/Screenshots/7.png)
 
 
 5. when user refreshes page, last saved player's information will be displayed.
 
-*SCREENSHOT*
+6. When user presses the refresh button, Saved MVP buttons will clear and browser will refresh
 
+![](/Screenshots/8.png)
 
 # Notes/Issues/Future Development:
 
