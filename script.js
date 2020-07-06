@@ -1,9 +1,12 @@
+//global variables
 const savedMVPs = $("#savedMVPs");
 const savePlayerBtn = $("#savePlayerBtn");
-const apiKey = "&key=AIzaSyDbZPfUtjliyuqK5aR6PP_ng8nNZpL6Njo"; //don't commit this key. Delete before commit.
+const apiKey = "&key="; //don't commit this key. Delete before commit.
 const searchBtn = $("#search-btn");
+const clearLocalStore = $("#clear-localstorage-btn");
 let savedPlayerArray = JSON.parse(localStorage.getItem("savedMVPList")) || [];
 
+//function loads on refresh so that the last saved player details, video and gif will be displayed. 
 renderPlayerBtns();
 if (savedPlayerArray.length > 0) {
 
@@ -13,6 +16,7 @@ if (savedPlayerArray.length > 0) {
     searchGiphy(lastMVP);
 }
 
+//enables searchBtn function to run when enter key is pressed with the player search input field
 $("#player-search-input").keypress(function (event) {
     if (event.keyCode === 13) {
         event.preventDefault();
@@ -20,6 +24,7 @@ $("#player-search-input").keypress(function (event) {
     }
 });
 
+//main function of the app that triggers all functions
 searchBtn.on("click", function (event) {
     let playerName = $(".input").val();
     event.preventDefault();
@@ -29,9 +34,10 @@ searchBtn.on("click", function (event) {
     searchBallDl(playerName);
     searchYouTube(playerName);
     searchGiphy(playerName);
-
+    $(".input").val("");
 });
 
+//to render on reload any saved player buttons from local storage 
 function renderPlayerBtns() {
     for (let i = 0; i < savedPlayerArray.length; i++) {
         let newDiv = $("<div>").addClass("savedPlayer");
@@ -40,11 +46,13 @@ function renderPlayerBtns() {
     }
 }
 
+// deletes all content for player stats and gifs
 function resetState() {
     savedMVPs.empty();
     $(".slides").empty();
 }
 
+//adds to current searched player to local storage. When limit of 5 is reached first saved player is replaced.
 savePlayerBtn.on("click", function (event) {
     event.preventDefault();
 
@@ -53,7 +61,7 @@ savePlayerBtn.on("click", function (event) {
         savedPlayerArray.unshift(savedPlayerName);
         localStorage.setItem("savedMVPList", JSON.stringify(savedPlayerArray));
         resetState();
-        renderPlayerBtns();
+        renderPlayerBtns(); 
         searchGiphy(savedPlayerName);
     } else {
         let savedPlayerName = $("#name").text();
@@ -66,6 +74,12 @@ savePlayerBtn.on("click", function (event) {
     }
 });
 
+clearLocalStore.on("click", function(){
+    localStorage.clear();
+    location.reload();
+})
+
+//triggers app functions when saved player is pressed
 $(document).on('click', ".savedPlayer", function (event) {
     event.preventDefault();
     let searchText = $(this).text().replace(" ", "%20");
@@ -76,6 +90,7 @@ $(document).on('click', ".savedPlayer", function (event) {
     searchGiphy(searchText);
 })
 
+//api function for player information from www.balldontlie.io
 function searchBallDl(x) {
     let queryURL = "https://www.balldontlie.io/api/v1/players?search=" + x;
     $.ajax({
@@ -110,6 +125,7 @@ function searchBallDl(x) {
     });
 }
 
+//api function for player stats from www.balldontlie.io
 function playerStats(x) {
 
     let queryURL =
@@ -133,8 +149,8 @@ function playerStats(x) {
     });
 }
 
+//Youtube api retrieves a clip of player highlights and randomly chooses 1 of 25
 function searchYouTube(playerName) {
-  //   let playerName = $(".input").val().replace(" ", "%20");
   let queryURLyt =
     "https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&q=" +
     playerName +
@@ -145,7 +161,7 @@ function searchYouTube(playerName) {
     url: queryURLyt,
     method: "GET",
   }).then(function (response) {
-    let itemNumber = Math.floor(Math.random() * 50) + 1;
+    let itemNumber = Math.floor(Math.random() * 25) + 1;
     let highlightVid = response.items[itemNumber].id.videoId; 
 
     console.log(response);
@@ -156,6 +172,7 @@ function searchYouTube(playerName) {
   });
 }
 
+//Giphy api retrieves 5 gifs related to searched player
 function searchGiphy(playerName) {
     const giphyAPIkey = "&api_key=J6pBLGX38uKv9oFHUNmKpHbDAvpQ1r1K";
     const queryURL2 =
