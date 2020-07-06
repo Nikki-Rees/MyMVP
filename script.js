@@ -1,7 +1,7 @@
 //global variables
 const savedMVPs = $("#savedMVPs");
 const savePlayerBtn = $("#savePlayerBtn");
-const apiKey = ""; //don't commit this key. Delete before commit.
+const apiKey = "&key=AIzaSyABGM37j16t_jMNsCaH432AXu9oC0nlcY4"; //don't commit this key. Delete before commit.
 const searchBtn = $("#search-btn");
 const clearLocalStore = $("#clear-localstorage-btn");
 let savedPlayerArray = JSON.parse(localStorage.getItem("savedMVPList")) || [];
@@ -10,7 +10,7 @@ let savedPlayerArray = JSON.parse(localStorage.getItem("savedMVPList")) || [];
 renderPlayerBtns();
 if (savedPlayerArray.length > 0) {
 
-    let lastMVP = (savedPlayerArray[savedPlayerArray.length - 1]).replace(" ", "%20");
+    let lastMVP = (savedPlayerArray[0]).replace(" ", "%20");
     searchBallDl(lastMVP);
     searchYouTube(lastMVP);
     searchGiphy(lastMVP);

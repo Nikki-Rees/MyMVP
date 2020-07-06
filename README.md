@@ -17,6 +17,7 @@ This application enables the user to search their favourite NBA player which wil
     - Youtube Data API: Search input value queries the Youtube Data API and retrieves the first available youtube video ID from the search response, which then dynamically changes the video playing in the browser.
 * Use of Bulma CSS Framework to style the application.
 * Use of local storage to save any previously saved players and render the last displayed player upon refresh of browser
+* Use of Bulma Framework to implement a slider function for rendered gifs
 
 
 Link to deployed application: https://nikki-rees.github.io/ProjectOne/
@@ -61,9 +62,15 @@ Link to deployed application: https://nikki-rees.github.io/ProjectOne/
 *SCREENSHOT*
 
 
-# Notes/Issues:
+# Notes/Issues/Future Development:
 
 * Due to limitations with free access to Youtube Data API, there is a finite quota of queries to the remote API. Once quota is reached, a new project and API key will need to be generated. 
 
-* current features in the pipeline to be intergrated into the application: 
-    -Carousel GIF 
+* Immediate improvements
+- Fix header and saved MVP list to the top of the screen
+- Display stats in a table format
+
+* Future development ideas
+- Include ability for user to enter their own height and see a scale model of themselves next to an NBA player
+- Develop a game that allows users to play top trumps in groups
+- Ability to return links to merchandise of individual players 
